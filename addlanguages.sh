@@ -1,4 +1,6 @@
 #!/bin/zsh
+user=`who | grep "console" | cut -d" " -f1`
+
 sudo -u $user defaults write com.apple.TextInputMenu visible -bool false
 sudo -u $user defaults write com.apple.TextInputMenuAgent "NSStatusItem Visible Item-0" -bool false
 sudo -u $user defaults delete com.apple.HIToolbox AppleEnabledInputSources
